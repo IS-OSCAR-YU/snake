@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, .75);
+}
+.container {
+    margin: 10px auto;
+    padding: 80px 20px 20px 20px;
+    background: rgb(88, 137, 57);
+    position: relative;
+}
+.container .score {
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, .25);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.container .score p:nth-child(1) {
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 60px;
+    padding-left: 80px;
+    color: #dfdfdf; 
+    position: relative;
+    float: left;
+}
+.container .score p:nth-child(2) {
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    float: right;
+    margin-right: 35px;
+    color: #ccc;
+}
+.container .score p::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url(../images/food.png) no-repeat;
+    background-size: 30px 30px;
+}
+.container table {
+    border-spacing: 0;
+}
+.container table > tr {
+    margin: 0;
+    padding: 0;
+}
+.container table > tr > td {
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+/* background: #0099FF; */
+/* background: #00CCFF; */
+.container table tr:nth-child(n) td:nth-child(n) {
+    background: rgb(171, 213, 90);
+    /* background: #0099FF; */
+}
+.container table tr:nth-child(n) td:nth-child(2n) {
+    background: rgb(163, 207, 83);
+    /* background: #00CCFF; */
+}
+.container table tr:nth-child(2n) td:nth-child(n) {
+    background: rgb(163, 207, 83);
+    /* background: #00CCFF; */
+}
+.container table tr:nth-child(2n) td:nth-child(2n) {
+    background: rgb(171, 213, 90);
+    /* background: #0099FF; */
+}
+
+.container table tr:nth-child(n) td:nth-child(n).active {
+    background: rgb(171, 213, 90) url(../images/food.png) no-repeat;
+    background-size: 100% 100%;
+}
+.container table tr:nth-child(n) td:nth-child(2n).active {
+    background: rgb(163, 207, 83) url(../images/food.png) no-repeat;
+    background-size: 100% 100%;
+}
+.container table tr:nth-child(2n) td:nth-child(n).active {
+    background: rgb(163, 207, 83) url(../images/food.png) no-repeat;
+    background-size: 100% 100%;
+}
+.container table tr:nth-child(2n) td:nth-child(2n).active {
+    background: rgb(171, 213, 90) url(../images/food.png) no-repeat;
+    background-size: 100% 100%;
+}
+.container table tr td.head,
+.container table tr td.snake,
+.container table tr td.footer {
+    background-repeat: no-repeat !important;
+    background-size: 80% 80% !important;
+    background-position: center center !important;
+}
+
+.container table tr td.stone::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url(../images/barrier.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.container > .score > div {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    z-index: 10;
+    display: none;
+}
+
+.container > .score > div.start {
+    display: block;
+    background: url(../images/start.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.container > .score > div.end {
+    display: block;
+    background: url(../images/refresh.png) no-repeat;
+    background-size: 100% 100%;
+}
